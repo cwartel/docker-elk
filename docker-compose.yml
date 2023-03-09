@@ -11,9 +11,9 @@ services:
   # any modification to existing users.
   setup:
     build:
-      context: setup/
-      args:
-        ELASTIC_VERSION: 8.6.2
+      - context: setup/
+      - args:
+          ELASTIC_VERSION: 8.6.2
     init: true
     volumes:
       - ./setup/entrypoint.sh:/entrypoint.sh:ro,Z
